@@ -1,9 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;/*já inclui largura/altura padding e borda*/
 }
 
+
+/*
+  Tudo "Declarado" com o começo com -- é uma variavel
+*/
 :root {
   --text-color: white;
   --bg-url: url(./Assets/bg-mobile.jpg);
@@ -11,8 +15,11 @@
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.02);
-  --switch-bg-url: url(./Assets/moon-stars.svg);
-}
+  --switch-bg-url: url(./Assets/moon-stars.svg); /*IMG do botão*/
+} /*
+    Quando começar com : significa uma variavel global
+    Esta definindo o padrão como a pagina sera aberta
+  */
 
 .light {
   --text-color: black;
@@ -23,14 +30,22 @@
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./Assets/sun.svg);
 }
+  /*
+    Definindo o padrão após a clicar no botão
+  */
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
+  /*Aplica alteração no body bruto como um quadrado*/
 }
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
+  /*
+    Aqui o uso do * significa que tudo que for de herança ou algo do tipo vai sofrer essas alterações
+    É responsavel por alterar tudo dentro do body
+  */
 }
 #Container {
   /*height: 712px;*/
@@ -95,7 +110,7 @@ body * {
 
 /*barra*/
 ul {
-  list-style: none;
+  list-style: none; /*Tira todas as bolinhas da tag ul*/
   gap: 16px;
   display: flex;
   flex-direction: column;
@@ -119,9 +134,10 @@ ul li a {
   text-decoration: none;
   font-weight: 400;
   /*
-  Outra forma de alinhar seria:
-  display: block;
-  text-align: right;*/
+    Outra forma de alinhar seria:
+    display: block;
+    text-align: right;
+  */
   transition: background 0.5s;
 }
 
@@ -129,6 +145,9 @@ ul li a:hover {
   background: var(--surface-color-hover);
   backdrop-filter: blur(4px);
   border: 1.5px solid #fff;
+  /*
+    Faz o efeito ao clicar em cima do botão 
+  */
 }
 
 #social-links {
@@ -158,7 +177,7 @@ footer {
   font-size: 14px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px) /*Quando a tela for maior que 700px troca a imgagem de fundo para a versão desktop*/ {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
