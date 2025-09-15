@@ -123,8 +123,16 @@ body * {
   position: relative;
 }
 
+.ulpadrao{
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+
+}
+
 /*barra*/
-ul {
+._ul {
   list-style: none; /*Tira todas as bolinhas da tag ul*/
   gap: 16px;
   display: flex;
@@ -132,7 +140,7 @@ ul {
   padding: 24px 0;
 }
 
-ul li a {
+.ul_li_a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,7 +164,7 @@ ul li a {
   transition: background 0.5s;
 }
 
-ul li a:hover {
+.ul_li_a:hover {
   background: var(--surface-color-hover);
   backdrop-filter: blur(4px);
   border: 1.5px solid #fff;
