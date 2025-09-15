@@ -48,8 +48,10 @@
 }
 
 body {
+  
   background: var(--bg-url) no-repeat top center/cover; /* Fundo da página */
-  height: 100vh; /* Preenche toda a altura da tela */
+  min-height: 100vh; /* Defino a altura minima pra tela */
+  /*Sem altura maxima assim sempre acompanha o scroll, tem um acompanhar de outra forma*/
 }
 body * {
   font-family: "Inter", sans-serif; /* Fonte geral */
@@ -113,20 +115,21 @@ body * {
   position: relative; /* Para o botão circular se posicionar dentro */
 }
 
-.ulpadrao {
-  gap: 16px; /* Espaçamento entre itens */
-  display: flex;
-  flex-direction: column; /* Coloca em coluna */
-  padding: 24px 0; /* Espaçamento vertical */
+
+ul.desc{
+  list-style-type: disc; /*definindo o padrao para as <ul> que usar a classe desc*/
+  padding: 20px; /*Recuo*/
+
 }
+
 
 /* Barra de links */
 ._ul {
   list-style: none; /* Remove as bolinhas do ul */
   gap: 16px; /* Espaçamento entre itens */
   display: flex;
-  flex-direction: column;
-  padding: 24px 0;
+  flex-direction: column; /* Coloca em coluna */
+  padding: 24px 0; /* Espaçamento vertical */
 }
 
 .ul_li_a {
