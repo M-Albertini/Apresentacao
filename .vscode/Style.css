@@ -1,27 +1,27 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;/*já inclui largura/altura padding e borda*/
+  margin: 0; /* Remove todas as margens padrão */
+  padding: 0; /* Remove todos os espaçamentos internos padrão */
+  box-sizing: border-box; /* Faz com que width/height incluam borda e padding */
 }
 
 .header {
-color: white;
-padding: 20px;
-text-align: center;
+  color: white; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o conteúdo */
 }
 
 .header_h1 {
-margin: 0;
-font-size: 24px;
+  margin: 0; /* Remove margem padrão do h1 */
+  font-size: 24px; /* Define tamanho da fonte */
 }
 .header_p {
-margin: 5px 0 0;
-font-size: 16px;
+  margin: 5px 0 0; /* Espaçamento acima do parágrafo */
+  font-size: 16px; /* Define tamanho da fonte */
 }
 
-
-/*
-  Tudo "Declarado" com o começo com -- é uma variavel
+/* 
+  Variáveis globais (cores, imagens, etc.)
+  :root = válidas para toda a página
 */
 :root {
   --text-color: white;
@@ -30,12 +30,13 @@ font-size: 16px;
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.02);
-  --switch-bg-url: url(./Assets/moon-stars.svg); /*IMG do botão*/
-} /*
-    Quando começar com : significa uma variavel global
-    Esta definindo o padrão como a pagina sera aberta
-  */
+  --switch-bg-url: url(./Assets/moon-stars.svg); /* Ícone do botão (lua/estrelas) */
+}
 
+/* 
+  Quando o body recebe a classe .light,
+  as variáveis mudam para o tema claro
+*/
 .light {
   --text-color: black;
   --bg-url: url(./Assets/bg-mobile-light.jpg);
@@ -43,98 +44,86 @@ font-size: 16px;
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(./Assets/sun.svg);
+  --switch-bg-url: url(./Assets/sun.svg); /* Ícone do botão (sol) */
 }
-  /*
-    Definindo o padrão após a clicar no botão
-  */
 
 body {
-  background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
-  /*Aplica alteração no body bruto como um quadrado*/
+  background: var(--bg-url) no-repeat top center/cover; /* Fundo da página */
+  height: 100vh; /* Preenche toda a altura da tela */
 }
 body * {
-  font-family: "Inter", sans-serif;
-  color: var(--text-color);
-  /*
-    Aqui o uso do * significa que tudo que for de herança ou algo do tipo vai sofrer essas alterações
-    É responsavel por alterar tudo dentro do body
-  */
+  font-family: "Inter", sans-serif; /* Fonte geral */
+  color: var(--text-color); /* Cor do texto conforme o tema */
 }
+
 #Container {
-  /*height: 712px;*/
-  width: 100%;
-  max-width: 588px;
-  /* nesse caso que é automatico recomenda-se usar margin: auto; */
-  margin: 56px auto 0px;
-  padding: 0 24px;
+  width: 100%; /* Ocupar largura total */
+  max-width: 588px; /* Limite de largura */
+  margin: 56px auto 0px; /* Centraliza o container */
+  padding: 0 24px; /* Espaçamento interno lateral */
 }
 
 #Profile {
-  text-align: center;
-  padding: 24px;
+  text-align: center; /* Centraliza o conteúdo */
+  padding: 24px; /* Espaçamento interno */
 }
 #Profile img {
-  width: 112px;
-  margin: auto;
-  display: block;
+  width: 112px; /* Define tamanho fixo da imagem */
+  margin: auto; /* Centraliza horizontalmente */
+  display: block; /* Faz a imagem ocupar linha inteira */
 }
 #Profile p {
-  font-weight: 500;
-  line-height: 24px;
+  font-weight: 500; /* Peso da fonte médio */
+  line-height: 24px; /* Altura da linha */
 }
 
-/*switch*/
-
+/* Switch (botão para trocar tema) */
 #switch {
-  /* border: 1px solid red;*/
-  position: relative;
-  width: 64px;
-  margin: 4px auto;
+  position: relative; /* Define posição para o botão interno */
+  width: 64px; /* Largura da barra */
+  margin: 4px auto; /* Centraliza na tela */
 }
 
 #switch button {
-  width: 32px;
+  width: 32px; /* Tamanho do botão circular */
   height: 32px;
-  border: 0;
-  border-radius: 50%;
-  background: white var(--switch-bg-url) no-repeat center;
-  top: 50%;
-  left: 0;
-  position: absolute;
-  z-index: 1;
-  transform: translateY(-50%);
+  border: 0; /* Remove borda */
+  border-radius: 50%; /* Deixa redondo */
+  background: white var(--switch-bg-url) no-repeat center; /* Fundo + ícone */
+  top: 50%; /* Posiciona no meio vertical */
+  left: 0; /* Começa à esquerda */
+  position: absolute; /* Fica sobreposto dentro do #switch */
+  z-index: 1; /* Garante que fique acima */
+  transform: translateY(-50%); /* Ajusta o alinhamento no meio */
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  right: 0; /* Vai para a direita no tema claro */
+  left: initial; /* Remove valor anterior */
 }
 
 #switch span {
-  display: block;
-  width: 64px;
-  height: 24px;
-  border: 1px solid var(--stroke-color);
-  border-radius: 9999px;
-  backdrop-filter: blur(4px);
-  background: var(--surface-color);
-  position: relative;
+  display: block; /* Vira um bloco */
+  width: 64px; /* Igual à largura do switch */
+  height: 24px; /* Altura da barra */
+  border: 1px solid var(--stroke-color); /* Borda conforme o tema */
+  border-radius: 9999px; /* Deixa bem arredondado */
+  backdrop-filter: blur(4px); /* Aplica desfoque */
+  background: var(--surface-color); /* Cor de fundo */
+  position: relative; /* Para o botão circular se posicionar dentro */
 }
 
-.ulpadrao{
-  gap: 16px;
+.ulpadrao {
+  gap: 16px; /* Espaçamento entre itens */
   display: flex;
-  flex-direction: column;
-  padding: 24px 0;
-
+  flex-direction: column; /* Coloca em coluna */
+  padding: 24px 0; /* Espaçamento vertical */
 }
 
-/*barra*/
+/* Barra de links */
 ._ul {
-  list-style: none; /*Tira todas as bolinhas da tag ul*/
-  gap: 16px;
+  list-style: none; /* Remove as bolinhas do ul */
+  gap: 16px; /* Espaçamento entre itens */
   display: flex;
   flex-direction: column;
   padding: 24px 0;
@@ -142,71 +131,57 @@ body * {
 
 .ul_li_a {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 24px;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-
-  border-radius: 8px;
-
-  backdrop-filter: blur(4px);
-
-  -webkit-backdrop-filter: blur(4px);
-
-  text-decoration: none;
-  font-weight: 400;
-  /*
-    Outra forma de alinhar seria:
-    display: block;
-    text-align: right;
-  */
-  transition: background 0.5s;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 16px 24px; /* Espaçamento interno */
+  background: var(--surface-color); /* Fundo do botão */
+  border: 1px solid var(--stroke-color); /* Borda do botão */
+  border-radius: 8px; /* Cantos arredondados */
+  backdrop-filter: blur(4px); /* Efeito de desfoque */
+  -webkit-backdrop-filter: blur(4px); /* Suporte Safari */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 400; /* Peso da fonte */
+  transition: background 0.5s; /* Suaviza mudança de fundo */
 }
 
 .ul_li_a:hover {
-  background: var(--surface-color-hover);
+  background: var(--surface-color-hover); /* Muda fundo no hover */
   backdrop-filter: blur(4px);
-  border: 1.5px solid #fff;
-  /*
-    Faz o efeito ao clicar em cima do botão 
-  */
+  border: 1.5px solid #fff; /* Borda mais grossa e clara */
 }
 
 #social-links {
   display: flex;
-  justify-content: center;
-  padding: 24px 0;
-  font-size: 24px;
-  /* border: 1px solid blue;*/
+  justify-content: center; /* Centraliza os ícones */
+  padding: 24px 0; /* Espaçamento vertical */
+  font-size: 24px; /* Tamanho dos ícones */
 }
 
 #social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  transition: background 0.2s;
-  border-radius: 50%;
+  padding: 16px; /* Espaçamento ao redor do ícone */
+  transition: background 0.2s; /* Animação de fundo */
+  border-radius: 50%; /* Ícones ficam dentro de círculos */
 }
 
 #social-links a:hover {
-  background: var(--highlight-color);
+  background: var(--highlight-color); /* Fundo muda ao passar o mouse */
 }
 
 footer {
-  text-align: center;
-  padding: 24px 0;
-  font-size: 14px;
+  text-align: center; /* Centraliza o texto */
+  padding: 24px 0; /* Espaçamento vertical */
+  font-size: 14px; /* Fonte menor */
 }
 
-@media (min-width: 700px) /*Quando a tela for maior que 700px troca a imgagem de fundo para a versão desktop*/ {
+/* Responsividade: muda o fundo no desktop */
+@media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
-  /*Essa tag só funciona quanto temos a linha abaixo no HTML
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/
 }
