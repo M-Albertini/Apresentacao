@@ -4,6 +4,21 @@
   box-sizing: border-box;/*já inclui largura/altura padding e borda*/
 }
 
+.header {
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+.header_h1 {
+margin: 0;
+font-size: 24px;
+}
+.header_p {
+margin: 5px 0 0;
+font-size: 16px;
+}
+
 
 /*
   Tudo "Declarado" com o começo com -- é uma variavel
