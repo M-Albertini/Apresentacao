@@ -5,8 +5,7 @@
 }
 
 .header {
-  color: white; /* Cor do texto */
-  padding: 20px; /* Espaçamento interno */
+  margin: 0;
   text-align: center; /* Centraliza o conteúdo */
 }
 
@@ -53,11 +52,17 @@ body {
   min-height: 100vh; /* Defino a altura minima pra tela */
   /*Sem altura maxima assim sempre acompanha o scroll, tem um acompanhar de outra forma*/
   grid-template-rows: 1fr auto;
+  
 }
 body * {
   font-family: "Inter", sans-serif; /* Fonte geral */
   color: var(--text-color); /* Cor do texto conforme o tema */
-  grid-template-rows: 1fr auto;
+  
+  
+}
+.sub_ul{
+margin-left: 20px;
+list-style-type: circle;
 }
 
 #Container {
@@ -73,7 +78,7 @@ body * {
 }
 #Profile img {
   width: 112px; /* Define tamanho fixo da imagem */
-  margin: auto; /* Centraliza horizontalmente */
+  margin: auto; /* Centraliza no meio da pagina */
   display: block; /* Faz a imagem ocupar linha inteira */
 }
 #Profile p {
@@ -123,7 +128,6 @@ ul.desc{
   padding: 20px; /*Recuo*/
 
 }
-
 
 /* Barra de links */
 ._ul {
