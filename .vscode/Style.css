@@ -52,10 +52,12 @@ body {
   background: var(--bg-url) no-repeat top center/cover; /* Fundo da página */
   min-height: 100vh; /* Defino a altura minima pra tela */
   /*Sem altura maxima assim sempre acompanha o scroll, tem um acompanhar de outra forma*/
+  grid-template-rows: 1fr auto;
 }
 body * {
   font-family: "Inter", sans-serif; /* Fonte geral */
   color: var(--text-color); /* Cor do texto conforme o tema */
+  grid-template-rows: 1fr auto;
 }
 
 #Container {
